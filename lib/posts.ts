@@ -8,4 +8,13 @@ export const posts = [
     readingTime: 4,
     quizSlug: "basics",
   },
+  {
+    slug: "constraints-mechanics",
+    title: "Constraints & Generalized Coordinates",
+    description: "Deep dive into constraints in mechanics: holonomic and non-holonomic types, examples like bead on wire, rolling motion, pendulum with moving support, and the concepts of generalized coordinates, DOF, virtual displacement, and generalized forces.",
+    date: "2025-01-10",
+    tags: ["physics", "mechanics", "constraints"],
+    readingTime: 12,
+    quizSlug: "constraints",
+  },
 ] as const

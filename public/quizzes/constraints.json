@@ -1,0 +1,156 @@
+{
+  "title": "Constraints & Generalized Coordinates Quiz",
+  "description": "Test your understanding of holonomic and non-holonomic constraints, examples, generalized coordinates, DOF, virtual displacement, and generalized forces with both conceptual and numerical questions.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "question": "Which of the following is a holonomic constraint?",
+      "options": [
+        { "id": "a", "text": "Rolling without slipping" },
+        {
+          "id": "b",
+          "text": "Bead constrained to move on a fixed wire",
+          "correct": true,
+          "explanation": "The equation of the wire depends only on coordinates → holonomic."
+        },
+        { "id": "c", "text": "Knife edge moving only forward" },
+        { "id": "d", "text": "No sideways slipping of a wheel" }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "question": "A pendulum of length l has how many degrees of freedom (DOF)?",
+      "options": [
+        { "id": "a", "text": "3" },
+        { "id": "b", "text": "2" },
+        {
+          "id": "c",
+          "text": "1",
+          "correct": true,
+          "explanation": "One angle θ completely specifies the pendulum’s configuration."
+        },
+        { "id": "d", "text": "0" }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "multiple",
+      "question": "Which of these are examples of non-holonomic constraints?",
+      "options": [
+        { "id": "a", "text": "No slipping in rolling motion", "correct": true },
+        { "id": "b", "text": "Knife edge constrained to move only forward", "correct": true },
+        { "id": "c", "text": "Fixed length of a pendulum" },
+        { "id": "d", "text": "Particle constrained to move on a circle" }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "question": "Virtual displacement refers to:",
+      "options": [
+        { "id": "a", "text": "The actual motion of the system" },
+        {
+          "id": "b",
+          "text": "A hypothetical infinitesimal displacement consistent with constraints at fixed time",
+          "correct": true,
+          "explanation": "It is not real motion but a conceptual displacement for deriving equations."
+        },
+        { "id": "c", "text": "Displacement after one oscillation" },
+        { "id": "d", "text": "The velocity of the particle" }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "question": "Generalized force corresponding to a generalized coordinate is defined through:",
+      "options": [
+        { "id": "a", "text": "Newton’s second law only" },
+        { "id": "b", "text": "Momentum conservation" },
+        {
+          "id": "c",
+          "text": "Principle of virtual work",
+          "correct": true,
+          "explanation": "Generalized forces are defined so δW = Σ Qj δqj."
+        },
+        { "id": "d", "text": "Energy conservation principle" }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "question": "A particle in 3D space (3 DOF) is constrained to a sphere x²+y²+z²=R². What is its new DOF?",
+      "options": [
+        { "id": "a", "text": "3" },
+        {
+          "id": "b",
+          "text": "2",
+          "correct": true,
+          "explanation": "One holonomic constraint reduces DOF from 3 to 2 (θ, φ)."
+        },
+        { "id": "c", "text": "1" },
+        { "id": "d", "text": "0" }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "question": "A rigid body in free space has 6 DOF. If it is hinged at one point, how many DOF remain?",
+      "options": [
+        { "id": "a", "text": "6" },
+        { "id": "b", "text": "5" },
+        {
+          "id": "c",
+          "text": "3",
+          "correct": true,
+          "explanation": "Hinge removes 3 translational DOF, leaving 3 rotational DOF."
+        },
+        { "id": "d", "text": "1" }
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "question": "A double pendulum (two masses with rigid rods) has how many DOF?",
+      "options": [
+        { "id": "a", "text": "1" },
+        {
+          "id": "b",
+          "text": "2",
+          "correct": true,
+          "explanation": "Each pendulum has one independent angle → 2 DOF in total."
+        },
+        { "id": "c", "text": "3" },
+        { "id": "d", "text": "4" }
+      ]
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "question": "Which coordinate system best describes a simple pendulum?",
+      "options": [
+        { "id": "a", "text": "Cartesian (x, y)" },
+        {
+          "id": "b",
+          "text": "Polar angle θ",
+          "correct": true,
+          "explanation": "One generalized coordinate θ is enough to describe motion."
+        },
+        { "id": "c", "text": "Cylindrical (r, θ, z)" },
+        { "id": "d", "text": "Spherical (r, θ, φ)" }
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "multiple",
+      "question": "Select all correct statements:",
+      "options": [
+        { "id": "a", "text": "Generalized coordinates can be angles, lengths, or any independent parameters", "correct": true },
+        { "id": "b", "text": "Virtual displacement must satisfy constraints", "correct": true },
+        { "id": "c", "text": "Holonomic constraints are expressible as coordinate equations", "correct": true },
+        { "id": "d", "text": "Non-holonomic constraints can always be converted into holonomic" }
+      ]
+    }
+  ]
+}

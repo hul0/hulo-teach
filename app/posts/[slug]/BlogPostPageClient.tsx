@@ -94,7 +94,7 @@ export default function BlogPostPageClient({ params }: Props) {
 }
 
 function BlogContent({ slug }: { slug: string }) {
-  const { data, error, isLoading } = useSWR(`/blog/${slug}.md`, fetcher)
+  const { data, error, isLoading } = useSWR(`/content/blog/${slug}.md`, fetcher)
   if (isLoading) return <div className="text-sm text-muted-foreground">Loading article…</div>
   if (error) return <div className="text-sm text-red-600">Failed to load article.</div>
   return <MarkdownRenderer markdown={data || ""} />

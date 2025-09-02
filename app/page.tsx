@@ -21,7 +21,7 @@ export default function HomePage() {
         </p>
         <div className="flex items-center justify-center gap-4">
           <Link
-            href="/blog"
+            href="/posts"
             className="inline-flex items-center rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm hover:bg-primary/90"
           >
             Read Blogs
@@ -38,7 +38,7 @@ export default function HomePage() {
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold tracking-tight">Latest Blogs</h2>
-          <Link href="/blog" className="text-sm text-primary hover:underline">
+          <Link href="/posts" className="text-sm text-primary hover:underline">
             View all
           </Link>
         </div>
