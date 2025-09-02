@@ -85,7 +85,7 @@ export default function BlogPostPageClient({ params }: Props) {
             description: post.description,
             datePublished: post.date,
             author: { "@type": "Person", name: "Instructor" },
-            url: `/blog/${post.slug}`,
+            url: `/posts/${post.slug}`,
           }),
         }}
       />

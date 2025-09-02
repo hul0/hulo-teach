@@ -24,7 +24,7 @@ export default function ProgressPageClient() {
           <ul className="grid gap-2">
             {posts.map((p) => (
               <li key={`post:${p.slug}`}>
-                <Link href={`/blog/${p.slug}`} className="hover:underline">
+                <Link href={`/posts/${p.slug}`} className="hover:underline">
                   {p.slug}
                 </Link>
               </li>

@@ -23,7 +23,7 @@ export default function BookmarksPageClient() {
                 <div>
                   <p className="text-sm uppercase text-muted-foreground">{b.type}</p>
                   <Link
-                    href={`/${b.type === "post" ? "blog" : "quizzes"}/${b.slug}`}
+                    href={`/${b.type === "post" ? "posts" : "quizzes"}/${b.slug}`}
                     className="font-medium hover:underline"
                   >
                     {b.title}

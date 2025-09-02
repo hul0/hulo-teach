@@ -19,7 +19,7 @@ export function ArticleCard({ post }: { post: Post }) {
     <article className="rounded-lg border p-4 flex flex-col gap-3">
       <div className="space-y-1">
         <h3 className="font-medium">
-          <Link href={`/blog/${post.slug}`} className="hover:underline">
+          <Link href={`/posts/${post.slug}`} className="hover:underline">
             {post.title}
           </Link>
         </h3>
@@ -38,7 +38,7 @@ export function ArticleCard({ post }: { post: Post }) {
       </div>
       <div className="flex items-center gap-2 mt-auto">
         <Link
-          href={`/blog/${post.slug}`}
+          href={`/posts/${post.slug}`}
           className="inline-flex items-center rounded-md bg-blue-600 text-white px-3 py-1.5 text-sm hover:bg-blue-500"
         >
           Read
