@@ -1,0 +1,32 @@
+{
+  "title": "Learning Basics Check",
+  "description": "A short quiz to test core ideas from the intro article.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "question": "What is the main goal of this platform?",
+      "options": [
+        { "id": "a", "text": "Be flashy and complex" },
+        {
+          "id": "b",
+          "text": "Deliver minimal, clear learning content",
+          "correct": true,
+          "explanation": "Clarity and focus are key."
+        },
+        { "id": "c", "text": "Collect user data for ads" }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "multiple",
+      "question": "Which features does it include?",
+      "options": [
+        { "id": "a", "text": "Markdown articles", "correct": true },
+        { "id": "b", "text": "Interactive quizzes", "correct": true },
+        { "id": "c", "text": "Bookmarking and progress", "correct": true },
+        { "id": "d", "text": "Crypto miner" }
+      ]
+    }
+  ]
+}
