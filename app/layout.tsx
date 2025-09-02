@@ -5,8 +5,9 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import "./globals.css"
 import { DM_Sans } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hulobiral.online"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · Hulo",
   },
   description:
-    "A minimal teaching platform with rich Markdown lessons and interactive quizzes. Read, practice, and track your progress.",
+    "Learn various topics with lessons and interactive quizzes. Read, practice, and track your progress.",
   alternates: {
     canonical: "/",
   },
@@ -30,25 +31,26 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     title: "Hulo — Lessons and Quizzes for Learning",
-    description: "A minimal teaching platform with rich Markdown lessons and interactive quizzes.",
+    description: "Learn various topics with lessons and interactive quizzes. Read, practice, and track your progress.",
     siteName: "Hulo",
   },
   twitter: {
     card: "summary_large_image",
     title: "Hulo — Lessons and Quizzes for Learning",
-    description: "A minimal teaching platform with rich Markdown lessons and interactive quizzes.",
+    description: 
+    "Learn various topics with lessons and interactive quizzes. Read, practice, and track your progress.",
   },
   robots: {
     index: true,
     follow: true,
-  },
-    generator: 'v0.app'
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${dmSans.variable} antialiased`}>
       <body className="min-h-dvh bg-background text-foreground font-sans">
+        <Analytics/>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />
           <main className="container mx-auto px-4 md:px-6 py-6">{children}</main>

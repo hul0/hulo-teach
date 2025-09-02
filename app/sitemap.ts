@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { posts } from "@/lib/posts"
 import { quizzes } from "@/lib/quizzes"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://study.hulobiral.online"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/posts", "/quizzes", "/bookmarks", "/progress"].map((p) => ({
