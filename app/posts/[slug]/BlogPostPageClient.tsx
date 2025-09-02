@@ -1,20 +1,20 @@
+// app/posts/[slug]/BlogPostPageClient.tsx
+
 "use client"
-//  Blog detail page with SEO metadata & JSON-LD, markdown rendering, bookmarking & completion
-import { notFound } from "next/navigation"
 import Link from "next/link"
-import useSWR from "swr"
-import { posts } from "@/lib/posts"
 import { MarkdownRenderer } from "@/components/markdown-renderer"
 import { useBookmarks, useCompletion } from "@/lib/storage"
 import { Suspense } from "react"
+import { posts } from "@/lib/posts" // We need this to get the post type
 
-type Props = { params: { slug: string } }
+// Define a type for a single post based on your `posts.ts` file
+type Post = (typeof posts)[number];
 
-const fetcher = (url: string) =>
-  fetch(url).then((r) => {
-    if (!r.ok) throw new Error("Failed to load content")
-    return r.text()
-  })
+type BlogPostPageClientProps = {
+  post: Post;
+  markdownContent: string;
+}
+
 
 function BlogControls({ slug, title }: { slug: string; title: string }) {
   const { isBookmarked, toggleBookmark } = useBookmarks()
@@ -40,9 +40,7 @@ function BlogControls({ slug, title }: { slug: string; title: string }) {
   )
 }
 
-export default function BlogPostPageClient({ params }: Props) {
-  const post = posts.find((p) => p.slug === params.slug)
-  if (!post) notFound()
+export default function BlogPostPageClient({ post, markdownContent }: BlogPostPageClientProps) {
   return (
     <div className="space-y-6">
       <header className="space-y-2">
@@ -56,9 +54,7 @@ export default function BlogPostPageClient({ params }: Props) {
         </div>
       </header>
 
-      <Suspense fallback={<div className="text-sm text-muted-foreground">Loading content…</div>}>
-        <BlogContent slug={post.slug} />
-      </Suspense>
+      <MarkdownRenderer markdown={markdownContent} />
 
       {post.quizSlug ? (
         <div className="rounded-lg border p-4">
@@ -91,11 +87,4 @@ export default function BlogPostPageClient({ params }: Props) {
       />
     </div>
   )
-}
-
-function BlogContent({ slug }: { slug: string }) {
-  const { data, error, isLoading } = useSWR(`/content/blog/${slug}.md`, fetcher)
-  if (isLoading) return <div className="text-sm text-muted-foreground">Loading article…</div>
-  if (error) return <div className="text-sm text-red-600">Failed to load article.</div>
-  return <MarkdownRenderer markdown={data || ""} />
 }

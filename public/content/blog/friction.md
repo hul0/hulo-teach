@@ -1,4 +1,3 @@
-```markdown
 # ⚙️📘 Physics Mechanics — **FRICTION**  
 
 ---
@@ -162,6 +161,3 @@ It always acts **tangentially** to the surfaces in contact.
 ✔️ Vital applications in **machines, transport, and mechanics problems**.  
 
 ---
-```
-
-Would you like me to now **make the posts + quizzes (with numerical-style single-option MCQs)** for this *Friction* topic, like I did for *Constraints*?

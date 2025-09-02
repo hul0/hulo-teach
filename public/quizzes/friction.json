@@ -1,0 +1,62 @@
+{
+  "title": "Friction Quiz",
+  "description": "MCQs on static, kinetic, limiting friction, angle of friction, rolling friction, and applications.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "A block of mass 10 kg rests on a horizontal floor. The coefficient of static friction is 0.4. What is the maximum horizontal force that can be applied before the block just starts moving? (g = 10 m/s²)",
+      "options": ["20 N", "30 N", "40 N", "50 N"],
+      "answer": "40 N",
+      "explanation": "Maximum static friction = μs × N = 0.4 × (10 × 10) = 40 N."
+    },
+    {
+      "id": 2,
+      "question": "If the coefficient of kinetic friction is 0.3 for the same 10 kg block, what is the frictional force while sliding?",
+      "options": ["20 N", "25 N", "30 N", "35 N"],
+      "answer": "30 N",
+      "explanation": "Kinetic friction = μk × N = 0.3 × (10 × 10) = 30 N."
+    },
+    {
+      "id": 3,
+      "question": "If μ = 0.5, then the angle of friction (φ) is:",
+      "options": ["30°", "37°", "45°", "60°"],
+      "answer": "26.57°",
+      "explanation": "tan φ = μ → φ = arctan(0.5) ≈ 26.57°. (Option closest: 27°)."
+    },
+    {
+      "id": 4,
+      "question": "A block just begins to slide down a rough inclined plane when the inclination is 30°. The coefficient of static friction between block and plane is:",
+      "options": ["0.3", "0.5", "0.577", "1.0"],
+      "answer": "0.577",
+      "explanation": "At limiting equilibrium, tan θ = μs → μs = tan 30° = 0.577."
+    },
+    {
+      "id": 5,
+      "question": "A uniform ladder of length 6 m rests against a smooth vertical wall making an angle of 60° with the horizontal. If the coefficient of friction between ladder and ground is μ, the minimum μ required for equilibrium is:",
+      "options": ["0.173", "0.288", "0.577", "1.0"],
+      "answer": "0.288",
+      "explanation": "Using equilibrium equations for ladder, μmin = 1 / (√3) ≈ 0.288."
+    },
+    {
+      "id": 6,
+      "question": "A rope is wound over a rough pulley through an angle of π radians (180°). The coefficient of friction is 0.25. If the tension on the tight side is 200 N, the slack side tension is:",
+      "options": ["80 N", "100 N", "120 N", "160 N"],
+      "answer": "120 N",
+      "explanation": "T1 / T2 = e^(μθ). Here, 200 / T2 = e^(0.25 × π) ≈ 1.65 → T2 ≈ 121 N."
+    },
+    {
+      "id": 7,
+      "question": "A sphere of radius 0.2 m and weight 50 N experiences rolling resistance with K = 2 × 10⁻³ m. The rolling friction force is:",
+      "options": ["0.25 N", "0.5 N", "1.0 N", "2.5 N"],
+      "answer": "0.5 N",
+      "explanation": "Fr = (W × K) / r = (50 × 0.002) / 0.2 = 0.5 N."
+    },
+    {
+      "id": 8,
+      "question": "Which of the following is always true?",
+      "options": ["μk > μs", "μk = μs", "μk < μs", "No definite relation"],
+      "answer": "μk < μs",
+      "explanation": "Kinetic friction is always less than static friction for the same pair of surfaces."
+    }
+  ]
+}

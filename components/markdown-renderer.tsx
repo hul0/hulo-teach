@@ -1,46 +1,58 @@
 "use client"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import remarkMath from "remark-math"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeKatex from "rehype-katex"
+import rehypePrism from "rehype-prism-plus"
+
+// Import stylesheets for KaTeX and Prism syntax highlighting
+import "katex/dist/katex.min.css"
+import "prism-themes/themes/prism-vsc-dark-plus.css"
 
 export function MarkdownRenderer({ markdown }: { markdown: string }) {
   return (
-    <div className="mdx-content">
+    <div className="prose prose-lg dark:prose-invert max-w-none prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-headings:font-semibold">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[
+          rehypeSlug, 
+          [rehypeAutolinkHeadings, { behavior: "wrap" }],
+          rehypeKatex,
+          [rehypePrism, { showLineNumbers: true }]
+        ]}
         components={{
-          h1: ({ node, ...props }) => <h1 className="mt-6 mb-3 text-2xl md:text-3xl font-semibold" {...props} />,
-          h2: ({ node, ...props }) => <h2 className="mt-6 mb-3 text-xl md:text-2xl font-semibold" {...props} />,
-          h3: ({ node, ...props }) => <h3 className="mt-5 mb-2 text-lg font-semibold" {...props} />,
-          p: ({ node, ...props }) => <p className="my-3 leading-relaxed" {...props} />,
-          a: ({ node, ...props }) => <a className="text-blue-600 hover:underline" {...props} />,
-          ul: ({ node, ...props }) => <ul className="my-3 list-disc pl-6 space-y-1" {...props} />,
-          ol: ({ node, ...props }) => <ol className="my-3 list-decimal pl-6 space-y-1" {...props} />,
-          li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
+          h1: ({ node, ...props }) => <h1 className="border-b pb-2" {...props} />,
+          h2: ({ node, ...props }) => <h2 className="border-b pb-2" {...props} />,
           blockquote: ({ node, ...props }) => (
-            <blockquote className="my-4 border-l-2 pl-4 italic text-muted-foreground" {...props} />
+            <blockquote className="border-l-4 pl-4 italic text-muted-foreground" {...props} />
           ),
-          code: ({ inline, className, children, ...props }) =>
-            inline ? (
-              <code className="rounded bg-muted px-1 py-0.5 font-mono text-sm" {...props}>
-                {children}
-              </code>
-            ) : (
-              <pre className="my-4 overflow-x-auto rounded border bg-muted p-3">
-                <code className="font-mono text-sm">{children}</code>
-              </pre>
-            ),
-          hr: (props) => <hr className="my-6 border-muted" {...props} />,
-          table: (props) => (
-            <div className="my-4 overflow-x-auto">
-              <table className="min-w-full text-sm" {...props} />
+          // Custom component for the <pre> tag to style code blocks
+          pre: ({ node, ...props }) => (
+            <div className="my-6 rounded-lg overflow-hidden">
+                <pre {...props} />
             </div>
           ),
-          th: (props) => <th className="border px-2 py-1 text-left" {...props} />,
-          td: (props) => <td className="border px-2 py-1 align-top" {...props} />,
-          img: ({ node, ...props }) => <img className="my-4 rounded" alt="" {...props} />,
+          // Inline code styling
+          code: ({ node, inline, className, children, ...props }) => {
+            if (inline) {
+              return (
+                <code className="rounded bg-muted px-1.5 py-1 font-mono text-sm" {...props}>
+                  {children}
+                </code>
+              );
+            }
+            // For block code, we let rehype-prism-plus handle it via the `pre` component.
+            return <code className={className} {...props}>{children}</code>;
+          },
+          table: (props) => (
+            <div className="my-6 overflow-x-auto rounded-lg border">
+              <table className="w-full text-left" {...props} />
+            </div>
+          ),
+          th: (props) => <th className="bg-muted px-4 py-2 font-medium" {...props} />,
+          td: (props) => <td className="border-t px-4 py-2 align-top" {...props} />,
         }}
       >
         {markdown}

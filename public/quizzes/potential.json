@@ -1,0 +1,168 @@
+{
+  "title": "Potential Energy & Stability Quiz",
+  "description": "Test your understanding of potential energy, conservative and non-conservative forces, work-energy theorem, equilibrium, and small oscillations.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "question": "Which of the following forces is conservative?",
+      "options": [
+        { "id": "a", "text": "Frictional force" },
+        { "id": "b", "text": "Air drag" },
+        { "id": "c", "text": "Viscous resistance" },
+        {
+          "id": "d",
+          "text": "Gravitational force",
+          "correct": true,
+          "explanation": "Gravity is path-independent and has a well-defined potential energy (U = mgh)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "question": "Work done by conservative forces over a closed path is:",
+      "options": [
+        { "id": "a", "text": "Always positive" },
+        { "id": "b", "text": "Always negative" },
+        {
+          "id": "c",
+          "text": "Zero",
+          "correct": true,
+          "explanation": "In conservative fields, work done in a closed loop vanishes."
+        },
+        { "id": "d", "text": "Depends on velocity" }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "question": "A ball of mass 2 kg is lifted vertically by 5 m. Change in potential energy is:",
+      "options": [
+        { "id": "a", "text": "5 J" },
+        {
+          "id": "b",
+          "text": "98 J",
+          "correct": true,
+          "explanation": "U = mgh = 2 × 9.8 × 5 = 98 J."
+        },
+        { "id": "c", "text": "20 J" },
+        { "id": "d", "text": "50 J" }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "question": "Which equation represents the Work-Energy Theorem?",
+      "options": [
+        { "id": "a", "text": "ΔU = ΔK" },
+        {
+          "id": "b",
+          "text": "W_net = ΔK",
+          "correct": true,
+          "explanation": "The work done by all forces equals the change in kinetic energy."
+        },
+        { "id": "c", "text": "W_nc = 0" },
+        { "id": "d", "text": "E = K - U" }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "question": "A system is in stable equilibrium if:",
+      "options": [
+        { "id": "a", "text": "dU/dx ≠ 0" },
+        { "id": "b", "text": "d²U/dx² < 0" },
+        {
+          "id": "c",
+          "text": "d²U/dx² > 0",
+          "correct": true,
+          "explanation": "Positive curvature of U indicates a restoring force."
+        },
+        { "id": "d", "text": "U is constant everywhere" }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "question": "Which type of equilibrium does a ball at the top of a hill represent?",
+      "options": [
+        { "id": "a", "text": "Stable" },
+        {
+          "id": "b",
+          "text": "Unstable",
+          "correct": true,
+          "explanation": "Any small displacement lowers U, making the system diverge away."
+        },
+        { "id": "c", "text": "Neutral" },
+        { "id": "d", "text": "Dynamic" }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "multiple",
+      "question": "Select all correct statements about equilibrium:",
+      "options": [
+        {
+          "id": "a",
+          "text": "At equilibrium, dU/dx = 0",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Stable equilibrium requires d²U/dx² > 0",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Neutral equilibrium has d²U/dx² = 0",
+          "correct": true
+        },
+        { "id": "d", "text": "Unstable equilibrium requires U to be minimum" }
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "question": "A particle displaced slightly from stable equilibrium executes:",
+      "options": [
+        { "id": "a", "text": "Constant velocity motion" },
+        {
+          "id": "b",
+          "text": "Simple harmonic motion",
+          "correct": true,
+          "explanation": "Near equilibrium, U(x) ≈ U₀ + ½kx², leading to SHM."
+        },
+        { "id": "c", "text": "Exponential growth" },
+        { "id": "d", "text": "Circular motion" }
+      ]
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "question": "A mass of 0.5 kg attached to a spring (k = 200 N/m) has angular frequency of oscillation:",
+      "options": [
+        {
+          "id": "a",
+          "text": "20 rad/s",
+          "correct": true,
+          "explanation": "ω = √(k/m) = √(200 / 0.5) = √400 = 20 rad/s."
+        },
+        { "id": "b", "text": "10 rad/s" },
+        { "id": "c", "text": "40 rad/s" },
+        { "id": "d", "text": "200 rad/s" }
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "multiple",
+      "question": "Which of the following are examples of non-conservative forces?",
+      "options": [
+        { "id": "a", "text": "Friction", "correct": true },
+        { "id": "b", "text": "Viscous drag", "correct": true },
+        { "id": "c", "text": "Gravity" },
+        { "id": "d", "text": "Electrostatic force" }
+      ]
+    }
+  ]
+}
